@@ -1,4 +1,4 @@
-import Movie from '../models/movie.js'
+import Movie from '../models/Movie.js'
 
 /**
  * Fix this.
