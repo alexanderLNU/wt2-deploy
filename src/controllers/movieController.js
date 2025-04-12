@@ -1,10 +1,11 @@
 import Movie from '../models/Movie.js'
 
 /**
- * Fix this.
+ * Retrieves and returns all movies from DB.
  *
- * @param {*} req Fix
- * @param {*} res FIx
+ * @param {object} req      The Express request object.
+ * @param {object} res      The Express response object.
+ * @returns {Promise<void>} Send the movies as JSON response.
  */
 export const getAllMovies = async (req, res) => {
   try {
@@ -16,10 +17,11 @@ export const getAllMovies = async (req, res) => {
 }
 
 /**
- * Fix this.
+ * Retrieves and returns movies with a review rating greater than or equal to the specified rating.
  *
- * @param {*} req Fix
- * @param {*} res FIx
+ * @param {object} req      The Express request object.
+ * @param {object} res      The Express response object.
+ * @returns {Promise<void>} Send the movies filtered by rating in JSON response.
  */
 export const getMoviesWithRatingAboveSpecified = async (req, res) => {
   const rating = parseFloat(req.params.rating)
@@ -32,10 +34,11 @@ export const getMoviesWithRatingAboveSpecified = async (req, res) => {
 }
 
 /**
- * Fix this.
+ * Retrieves and returns the top 10 highest-rated movies.
  *
- * @param {*} req Fix
- * @param {*} res FIx
+ * @param {object} req      The Express request object.
+ * @param {object} res      The Express response object.
+ * @returns {Promise<void>} Send the top 10 highest-rated movies in JSON response.
  */
 export const getMoviesWithBestRating = async (req, res) => {
   try {
@@ -47,10 +50,11 @@ export const getMoviesWithBestRating = async (req, res) => {
 }
 
 /**
- * Fix this.
+ * Aggregates movies and returns the number of movies released per year.
  *
- * @param {*} req Fix
- * @param {*} res FIx
+ * @param {object} req      The Express request object.
+ * @param {object} res      The Express response object.
+ * @returns {Promise<void>} Sends aggregated movie data by year in JSON format.
  */
 export const getMoviesPerYear = async (req, res) => {
   try {
@@ -101,11 +105,12 @@ export const getMoviesPerYear = async (req, res) => {
 }
 
 /**
- * Fix this.
+ * Retrieves and returns countries sorted by highest average movie ratings.
+ * Country has to have at least 10 movies.
  *
- * @param {*} req Fix
- * @param {*} res FIx
- * @returns {Promise<void>} Fix
+ * @param {object} req      The Express request object.
+ * @param {object} res      The Express response object.
+ * @returns {Promise<void>} Sends top countries data based on average movie rating in JSON format.
  */
 export const getTopCountriesByRating = async (req, res) => {
   const countryQuery = req.query.country
